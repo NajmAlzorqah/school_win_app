@@ -45,6 +45,7 @@ SELECT * FROM UserRoles;
 CREATE VIEW StudentEnrollments AS
 SELECT 
     s.StudentID,
+	c.ClassID,
     s.FirstName AS StudentFirstName,
     s.LastName AS StudentLastName,
     c.ClassName,
@@ -80,6 +81,7 @@ SELECT
     s.FirstName AS StudentFirstName,
     s.LastName AS StudentLastName,
     c.ClassName,
+	c.ClassID,
     sub.SubjectName,
     g.Grade,
     g.GradeDate
@@ -93,6 +95,7 @@ JOIN
     Classes c ON cs.ClassID = c.ClassID
 JOIN 
     Subjects sub ON cs.SubjectID = sub.SubjectID;
+
 
 -- Create View for Contacts of Students
 CREATE VIEW StudentContacts AS
@@ -137,6 +140,7 @@ CREATE VIEW ClassSubjectsView AS
 SELECT 
     c.ClassID,
     c.ClassName,
+	c.GradeLevel,
     sub.SubjectName
 FROM 
     Classes c
@@ -166,6 +170,7 @@ SELECT
     t.TeacherID,
     t.FirstName AS TeacherFirstName,
     t.LastName AS TeacherLastName,
+	t.Email,
     sub.SubjectName
 FROM 
     Teachers t
