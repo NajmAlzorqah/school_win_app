@@ -142,5 +142,10 @@ namespace Project999.PresentationLayer
         {
 
         }
+
+        private void left_menu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

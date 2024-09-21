@@ -1,0 +1,11 @@
+C:\Users\USERWD\Desktop\Winform Project\School Application\Project999\bin\Debug\Project999.exe.config
+C:\Users\USERWD\Desktop\Winform Project\School Application\Project999\bin\Debug\Project999.exe
+C:\Users\USERWD\Desktop\Winform Project\School Application\Project999\bin\Debug\Project999.pdb
+C:\Users\USERWD\Desktop\Winform Project\School Application\Project999\obj\Debug\School Application.csprojAssemblyReference.cache
+C:\Users\USERWD\Desktop\Winform Project\School Application\Project999\obj\Debug\Project999.Libraries.RJTextBox.resources
+C:\Users\USERWD\Desktop\Winform Project\School Application\Project999\obj\Debug\Project999.PresentationLayer.Home_Form.resources
+C:\Users\USERWD\Desktop\Winform Project\School Application\Project999\obj\Debug\Project999.PresentationLayer.Login_Form.resources
+C:\Users\USERWD\Desktop\Winform Project\School Application\Project999\obj\Debug\Project999.Properties.Resources.resources
+C:\Users\USERWD\Desktop\Winform Project\School Application\Project999\obj\Debug\School Application.csproj.GenerateResource.cache
+C:\Users\USERWD\Desktop\Winform Project\School Application\Project999\obj\Debug\Project999.exe
+C:\Users\USERWD\Desktop\Winform Project\School Application\Project999\obj\Debug\Project999.pdb
