@@ -12,23 +12,27 @@ namespace Project999.PresentationLayer
 {
     public partial class Home_Form : Form
     {
+
+        // Students Section Variables
+        School_layes.StudentClass studentCAT = new School_layes.StudentClass();
+        School_layes.GradesLayerClass gradesCAT = new School_layes.GradesLayerClass();
+
+
+
+
         public Home_Form()
         {
             InitializeComponent();
             setwidth2();
 
             home_panel.Visible = true;
-            student_panel.Visible = false;
-            subject_panel.Visible = false;
-            teacher_panel.Visible = false;
-            class_panel.Visible = false;
-            users_panel.Visible = false;
-
-            // student Panels
-            insert_student_panel.Visible = true;
-            update_student_panel.Visible = false;
-            delete_student_panel.Visible = false;
-
+            StudentMainPanel.Visible = false;
+            SubjectsPanel.Visible = false;
+            TeacherPanel.Visible = false;
+            ClassesPanel.Visible = false;
+            UsersPanel.Visible = false;
+            GradesPanel.Visible = false;
+            EnrolmentPanel.Visible = false;
 
         }
         public void setwidth2()
@@ -57,41 +61,27 @@ namespace Project999.PresentationLayer
 
 
                 // Home Button
-                //home_button.ImageAlign = ContentAlignment.MiddleLeft;
                 home_button.Padding = new Padding(10, 0, 0, 0);
 
-
                 // Student Button
-                //student_button.ImageAlign = ContentAlignment.MiddleLeft;
                 student_button.Padding = new Padding(10, 0, 0, 0);
 
                 // Grades Button
-                //grades_button.ImageAlign = ContentAlignment.MiddleLeft;
                 grades_button.Padding = new Padding(10, 0, 0, 0);
 
                 // Teacher Button
-                //teacher_button.ImageAlign = ContentAlignment.MiddleLeft;
                 teacher_button.Padding = new Padding(10, 0, 0, 0);
 
-
                 // Subjects Button
-                //subjects_button.ImageAlign = ContentAlignment.MiddleLeft;
                 subjects_button.Padding = new Padding(10, 0, 0, 0);
 
                 // Enrolment Button
-                //enrolment_button.ImageAlign = ContentAlignment.MiddleLeft;
                 enrolment_button.Padding = new Padding(10, 0, 0, 0);
 
-
-
                 // Classes Button
-                //classes_button.ImageAlign = ContentAlignment.MiddleLeft;
                 classes_button.Padding = new Padding(10, 0, 0, 0);
 
-
-
                 // Users Button
-                //users_putton.ImageAlign = ContentAlignment.MiddleLeft;
                 users_putton.Padding = new Padding(10, 0, 0, 0);
 
             }
@@ -106,11 +96,9 @@ namespace Project999.PresentationLayer
                 menu_button.ImageAlign = ContentAlignment.MiddleCenter;
 
                 // Home Button
-                //home_button.ImageAlign = ContentAlignment.MiddleLeft;
                 home_button.Padding = new Padding(30, 0, 40, 0);
                 
                 // Student Button
-                //student_button.ImageAlign = ContentAlignment.MiddleLeft;
                 student_button.Padding = new Padding(30, 0, 40, 0);
 
                 // Grades Button
@@ -118,25 +106,20 @@ namespace Project999.PresentationLayer
 
 
                 // Teacher Button
-                //teacher_button.ImageAlign = ContentAlignment.MiddleLeft;
                 teacher_button.Padding = new Padding(30, 0, 40, 0);
 
 
                 // Subjects Button 
-                //subjects_button.ImageAlign = ContentAlignment.MiddleLeft;
                 subjects_button.Padding = new Padding(30, 0, 40, 0);
 
                 // Enrolment Button
-                //enrolment_button.ImageAlign = ContentAlignment.MiddleLeft;
                 enrolment_button.Padding = new Padding(30, 0, 40, 0);
 
                 // Classes Button
-                //classes_button.ImageAlign = ContentAlignment.MiddleLeft;
                 classes_button.Padding = new Padding(30, 0, 40, 0);
 
 
                 // Users Button
-                //users_putton.ImageAlign = ContentAlignment.MiddleLeft;
                 users_putton.Padding = new Padding(30, 0, 40, 0);
 
             }
@@ -153,142 +136,333 @@ namespace Project999.PresentationLayer
         private void home_button_Click(object sender, EventArgs e)
         {
             home_panel.Visible = true;
-            student_panel.Visible = false;
-            subject_panel.Visible = false;
-            teacher_panel.Visible = false;
-            class_panel.Visible = false;
-            users_panel.Visible = false;
-            grades_panel.Visible = false;
-            enrolment_panel.Visible = false;
+            StudentMainPanel.Visible = false;
+            SubjectsPanel.Visible = false;
+            TeacherPanel.Visible = false;
+            ClassesPanel.Visible = false;
+            UsersPanel.Visible = false;
+            GradesPanel.Visible = false;
+            EnrolmentPanel.Visible = false;
+
         }
 
         private void student_button_Click(object sender, EventArgs e)
         {
             home_panel.Visible = false;
-            student_panel.Visible = true;
-            subject_panel.Visible = false;
-            teacher_panel.Visible = false;
-            class_panel.Visible = false;
-            users_panel.Visible = false;
-            grades_panel.Visible = false;
-            enrolment_panel.Visible = false;
+            StudentMainPanel.Visible = true;
+            SubjectsPanel.Visible = false;
+            TeacherPanel.Visible = false;
+            ClassesPanel.Visible = false;
+            UsersPanel.Visible = false;
+            GradesPanel.Visible = false;
+            EnrolmentPanel.Visible = false;
+
+            // Loading Data form Database
+            try
+            {
+            DataTable dataTable = new DataTable();
+            dataTable = studentCAT.load();
+            studentDataGrid.DataSource = dataTable;
+            studentDataGrid.Columns[0].HeaderText = "Student ID";
+            //studentDataGrid.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+
+            studentDataGrid.Columns[1].HeaderText = "First Name";
+            //studentDataGrid.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+
+            studentDataGrid.Columns[2].HeaderText = "Last Name";
+            studentDataGrid.Columns[3].HeaderText = "Date of Birth";
+            studentDataGrid.Columns[4].HeaderText = "E-mail";
+            studentDataGrid.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void grades_button_Click(object sender, EventArgs e)
         {
             home_panel.Visible = false;
-            student_panel.Visible = false;
-            subject_panel.Visible = false;
-            teacher_panel.Visible = false;
-            class_panel.Visible = false;
-            users_panel.Visible = false;
-            grades_panel.Visible = true;
-            enrolment_panel.Visible = false;
+            StudentMainPanel.Visible = false;
+            SubjectsPanel.Visible = false;
+            TeacherPanel.Visible = false;
+            ClassesPanel.Visible = false;
+            UsersPanel.Visible = false;
+            GradesPanel.Visible = true;
+            EnrolmentPanel.Visible = false;
+
+
+            // Loading Data form Database
+            try
+            {
+                DataTable dataTable = new DataTable();
+                dataTable = gradesCAT.load();
+                GradesDaataGrid.DataSource = dataTable;
+                GradesDaataGrid.Columns[0].HeaderText = "Student ID";
+                //GradesDaataGrid.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+
+                GradesDaataGrid.Columns[1].HeaderText = "First Name";
+                
+
+                GradesDaataGrid.Columns[2].HeaderText = "Last Name";
+                GradesDaataGrid.Columns[3].HeaderText = "Class Name";
+                GradesDaataGrid.Columns[4].HeaderText = "Class ID";
+                //GradesDaataGrid.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+
+                GradesDaataGrid.Columns[5].HeaderText = "Subject Name";
+                GradesDaataGrid.Columns[6].HeaderText = "Grades";
+                GradesDaataGrid.Columns[7].HeaderText = "Grades Date";
+
+                //GradesDaataGrid.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void teacher_button_Click(object sender, EventArgs e)
         {
             home_panel.Visible = false;
-            student_panel.Visible = false;
-            subject_panel.Visible = false;
-            teacher_panel.Visible = true;
-            class_panel.Visible = false;
-            users_panel.Visible = false;
-            grades_panel.Visible = false;
-            enrolment_panel.Visible = false;
+            StudentMainPanel.Visible = false;
+            SubjectsPanel.Visible = false;
+            TeacherPanel.Visible = true;
+            ClassesPanel.Visible = false;
+            UsersPanel.Visible = false;
+            GradesPanel.Visible = false;
+            EnrolmentPanel.Visible = false;
         }
 
         private void subjects_button_Click(object sender, EventArgs e)
         {
             home_panel.Visible = false;
-            student_panel.Visible = false;
-            subject_panel.Visible = true;
-            teacher_panel.Visible = false;
-            class_panel.Visible = false;
-            users_panel.Visible = false;
-            grades_panel.Visible = false;
-            enrolment_panel.Visible = false;
+            StudentMainPanel.Visible = false;
+            SubjectsPanel.Visible = true;
+            TeacherPanel.Visible = false;
+            ClassesPanel.Visible = false;
+            UsersPanel.Visible = false;
+            GradesPanel.Visible = false;
+            EnrolmentPanel.Visible = false;
 
         }
 
         private void enrolment_button_Click(object sender, EventArgs e)
         {
             home_panel.Visible = false;
-            student_panel.Visible = false;
-            subject_panel.Visible = false;
-            teacher_panel.Visible = false;
-            class_panel.Visible = false;
-            users_panel.Visible = false;
-            grades_panel.Visible = false;
-            enrolment_panel.Visible = true;
+            StudentMainPanel.Visible = false;
+            SubjectsPanel.Visible = false;
+            TeacherPanel.Visible = false;
+            ClassesPanel.Visible = false;
+            UsersPanel.Visible = false;
+            GradesPanel.Visible = false;
+            EnrolmentPanel.Visible = true;
         }
         private void classes_button_Click(object sender, EventArgs e)
         {
             home_panel.Visible = false;
-            student_panel.Visible = false;
-            subject_panel.Visible = false;
-            teacher_panel.Visible = false;
-            class_panel.Visible = true;
-            users_panel.Visible = false;
-            grades_panel.Visible = false;
-            enrolment_panel.Visible = false;
+            StudentMainPanel.Visible = false;
+            SubjectsPanel.Visible = false;
+            TeacherPanel.Visible = false;
+            ClassesPanel.Visible = true;
+            UsersPanel.Visible = false;
+            GradesPanel.Visible = false;
+            EnrolmentPanel.Visible = false;
         }
 
         private void users_putton_Click(object sender, EventArgs e)
         {
             home_panel.Visible = false;
-            student_panel.Visible = false;
-            subject_panel.Visible = false;
-            teacher_panel.Visible = false;
-            class_panel.Visible = false;
-            users_panel.Visible = true;
-            grades_panel.Visible = false;
-            enrolment_panel.Visible = false;
+            StudentMainPanel.Visible = false;
+            SubjectsPanel.Visible = false;
+            TeacherPanel.Visible = false;
+            ClassesPanel.Visible = false;
+            UsersPanel.Visible = true;
+            GradesPanel.Visible = false;
+            EnrolmentPanel.Visible = false;
         }
         // END
         // //////////////////////////////////////////////////////////////////////
 
         private void INSERT_button_Click(object sender, EventArgs e)
         {
-            insert_student_panel.Visible = true;
-            update_student_panel.Visible = false;
-            delete_student_panel.Visible = false;
+            //insert_student_panel.Visible = true;
+            //update_student_panel.Visible = false;
+            //delete_student_panel.Visible = false;
         }
 
         private void update_button_Click(object sender, EventArgs e)
         {
-            insert_student_panel.Visible = false;
-            update_student_panel.Visible = true;
-            delete_student_panel.Visible = false;
+            //insert_student_panel.Visible = false;
+            //update_student_panel.Visible = true;
+            //delete_student_panel.Visible = false;
         }
 
         private void delete_button_Click(object sender, EventArgs e)
         {
-            insert_student_panel.Visible = false;
-            update_student_panel.Visible = false;
-            delete_student_panel.Visible = true;
+            //insert_student_panel.Visible = false;
+            //update_student_panel.Visible = false;
+            //delete_student_panel.Visible = true;
         }
 
         private void grade_insert_button_Click(object sender, EventArgs e)
         {
-            grade_update_panel.Visible = false;
-            grade_insert_panel.Visible = true;
-            grades_delete_panel.Visible = false;
+            //grade_update_panel.Visible = false;
+            //grade_insert_panel.Visible = true;
+            //grades_delete_panel.Visible = false;
         }
 
         private void grade_update_button_Click(object sender, EventArgs e)
         {
-            grade_update_panel.Visible = true;
-            grade_insert_panel.Visible = false;
-            grades_delete_panel.Visible = false;
+            //grade_update_panel.Visible = true;
+            //grade_insert_panel.Visible = false;
+            //grades_delete_panel.Visible = false;
         }
 
         private void grade_delete_panel_Click(object sender, EventArgs e)
         {
-            grade_update_panel.Visible = false;
-            grade_insert_panel.Visible = false;
-            grades_delete_panel.Visible = true;
+            //grade_update_panel.Visible = false;
+            //grade_insert_panel.Visible = false;
+            //grades_delete_panel.Visible = true;
         }
 
-        
+
+        private void subjectsAddBtn_Click(object sender, EventArgs e)
+        {
+            subjectsInsertPanel.Visible = true;
+            subjectsUpdatePanel.Visible = false;
+            subjectsDeletePanel.Visible = false;
+        }
+
+        private void subjectsUpdateBtn_Click(object sender, EventArgs e)
+        {
+            subjectsInsertPanel.Visible = false;
+            subjectsUpdatePanel.Visible = true;
+            subjectsDeletePanel.Visible = false;
+        }
+
+        private void subjectsDeleteBtn_Click(object sender, EventArgs e)
+        {
+            subjectsInsertPanel.Visible = false;
+            subjectsUpdatePanel.Visible = false;
+            subjectsDeletePanel.Visible = true;
+        }
+
+        private void studentInsertBtn_Click(object sender, EventArgs e)
+        {
+            InsertStudentPanel.Visible = true;
+            UpdateStudentPanel.Visible = false;
+            DeleteStudentPanel.Visible = false;
+        }
+
+        private void studentUpdateBtn_Click(object sender, EventArgs e)
+        {
+            InsertStudentPanel.Visible = false;
+            UpdateStudentPanel.Visible = true;
+            DeleteStudentPanel.Visible = false;
+        }
+
+        private void studentDeleteBtn_Click(object sender, EventArgs e)
+        {
+            InsertStudentPanel.Visible = false;
+            UpdateStudentPanel.Visible = false;
+            DeleteStudentPanel.Visible = true;
+        }
+
+        private void gradesAddBtn_Click(object sender, EventArgs e)
+        {
+            gradesInsertPanel.Visible = true;
+            gradesUpdatePanel.Visible = false;
+            gradesDeletePanel.Visible = false;
+        }
+
+        private void gradesUpdateBtn_Click(object sender, EventArgs e)
+        {
+            gradesInsertPanel.Visible = false;
+            gradesUpdatePanel.Visible = true;
+            gradesDeletePanel.Visible = false;
+        }
+
+        private void gradesDeleteBtn_Click(object sender, EventArgs e)
+        {
+            gradesInsertPanel.Visible = false;
+            gradesUpdatePanel.Visible = false;
+            gradesDeletePanel.Visible = true;
+        }
+
+        private void enrolmentAddBtn_Click(object sender, EventArgs e)
+        {
+            enrolmentInsertPanel.Visible = true;
+            enrolmentDeletePanle.Visible = false;
+        }
+
+        private void enrolmentDeleteBtn_Click(object sender, EventArgs e)
+        {
+            enrolmentInsertPanel.Visible = false;
+            enrolmentDeletePanle.Visible = true;
+        }
+
+        private void classAddBtn_Click(object sender, EventArgs e)
+        {
+            classInsertPanel.Visible = true;
+            classUpdatePanel.Visible = false;
+            classDeletePanel.Visible = false;
+        }
+
+        private void classUpdateBtn_Click(object sender, EventArgs e)
+        {
+            classInsertPanel.Visible = false;
+            classUpdatePanel.Visible = true;
+            classDeletePanel.Visible = false;
+        }
+
+        private void classDeleteBtn_Click(object sender, EventArgs e)
+        {
+            classInsertPanel.Visible = false;
+            classUpdatePanel.Visible = false;
+            classDeletePanel.Visible = true;
+        }
+
+        private void UserAddBtn_Click(object sender, EventArgs e)
+        {
+            UserInsertPanel.Visible = true;
+            UserUpdatePanel.Visible = false;
+            UserDeletePanel.Visible = false;
+
+        }
+
+        private void UserUpdateBtn_Click(object sender, EventArgs e)
+        {
+            UserInsertPanel.Visible = false;
+            UserUpdatePanel.Visible = true;
+            UserDeletePanel.Visible = false;
+        }
+
+        private void UserDeleteBtn_Click(object sender, EventArgs e)
+        {
+            UserInsertPanel.Visible = false;
+            UserUpdatePanel.Visible = false;
+            UserDeletePanel.Visible = true;
+        }
+
+        private void teachAddBtn_Click(object sender, EventArgs e)
+        {
+            teachInsertPanel.Visible = true;
+            teachUpdatePanel.Visible = false;
+            teachDeletePanel.Visible = false;
+        }
+
+        private void teachUpdateBtn_Click(object sender, EventArgs e)
+        {
+            teachInsertPanel.Visible = false;
+            teachUpdatePanel.Visible = true;
+            teachDeletePanel.Visible = false;
+        }
+
+        private void teachDeleteBtn_Click(object sender, EventArgs e)
+        {
+            teachInsertPanel.Visible = false;
+            teachUpdatePanel.Visible = false;
+            teachDeletePanel.Visible = true;
+        }
     }
 }

@@ -33,6 +33,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ComponentFactory.Krypton.Docking">
+      <HintPath>..\..\..\..\..\..\..\coding\مجلد جديد (2)\Krypton-master\Krypton-master\Bin\ComponentFactory.Krypton.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Navigator">
+      <HintPath>..\..\..\..\..\..\..\coding\مجلد جديد (2)\Krypton-master\Krypton-master\Bin\ComponentFactory.Krypton.Navigator.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Ribbon">
+      <HintPath>..\..\..\..\..\..\..\coding\مجلد جديد (2)\Krypton-master\Krypton-master\Bin\ComponentFactory.Krypton.Ribbon.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Toolkit">
+      <HintPath>..\..\..\..\..\..\..\coding\مجلد جديد (2)\Krypton-master\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Workspace">
+      <HintPath>..\..\..\..\..\..\..\coding\مجلد جديد (2)\Krypton-master\Krypton-master\Bin\ComponentFactory.Krypton.Workspace.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database\DatabaseClass.cs" />
     <Compile Include="Libraries\MenuColorTable.cs" />
     <Compile Include="Libraries\MenuRenderer.cs" />
     <Compile Include="Libraries\RJButton.cs">
@@ -73,6 +89,12 @@
     <Compile Include="Libraries\RJToggleButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="NewHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewHome.Designer.cs">
+      <DependentUpon>NewHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\Home_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,9 +107,16 @@
     <Compile Include="PresentationLayer\Login_Form.Designer.cs">
       <DependentUpon>Login_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\Student_layer.cs" />
+    <Compile Include="PresentationLayer\SubjectFunctions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="School layes\GradesLayerClass.cs" />
+    <Compile Include="School layes\StudentClass.cs" />
     <EmbeddedResource Include="Libraries\RJTextBox.resx" />
+    <EmbeddedResource Include="NewHome.resx">
+      <DependentUpon>NewHome.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\Home_Form.resx">
       <DependentUpon>Home_Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,8 +147,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\" />
-    <Folder Include="Database\" />
-    <Folder Include="Format\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
