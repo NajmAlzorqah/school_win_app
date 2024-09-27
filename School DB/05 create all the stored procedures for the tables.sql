@@ -446,11 +446,18 @@ BEGIN
     BEGIN TRANSACTION;
 
     BEGIN TRY
+        -- First, delete from ClassSubjects where the subject is referenced
+        DELETE FROM ClassSubjects WHERE SubjectID = @SubjectID;
+
+        -- Then, delete the subject itself
         DELETE FROM Subjects WHERE SubjectID = @SubjectID;
+
         COMMIT TRANSACTION;
     END TRY
     BEGIN CATCH
         ROLLBACK TRANSACTION;
+
+        -- Rethrow the error
         THROW;
     END CATCH
 END;
