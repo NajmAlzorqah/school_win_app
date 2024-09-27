@@ -84,7 +84,8 @@ SELECT
 	c.ClassID,
     sub.SubjectName,
     g.Grade,
-    g.GradeDate
+    g.GradeDate,
+	g.GradeID
 FROM 
     Grades g
 JOIN 
@@ -95,7 +96,6 @@ JOIN
     Classes c ON cs.ClassID = c.ClassID
 JOIN 
     Subjects sub ON cs.SubjectID = sub.SubjectID;
-
 
 -- Create View for Contacts of Students
 CREATE VIEW StudentContacts AS
