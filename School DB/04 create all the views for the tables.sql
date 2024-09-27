@@ -140,7 +140,8 @@ CREATE VIEW ClassSubjectsView AS
 SELECT 
     c.ClassID,
     c.ClassName,
-	c.GradeLevel,
+    c.GradeLevel,
+    c.TeacherID,  -- Adding the TeacherID column
     sub.SubjectName
 FROM 
     Classes c
@@ -148,6 +149,7 @@ JOIN
     ClassSubjects cs ON c.ClassID = cs.ClassID
 JOIN 
     Subjects sub ON cs.SubjectID = sub.SubjectID;
+GO
 
 -- Create View for All Students with Enrollment Dates
 CREATE VIEW StudentEnrollmentDetails AS

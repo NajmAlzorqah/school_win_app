@@ -383,11 +383,29 @@ BEGIN
     BEGIN TRANSACTION;
 
     BEGIN TRY
+        -- First, delete from Grades where the class is referenced via ClassSubjects
+        DELETE g
+        FROM Grades g
+        JOIN ClassSubjects cs ON g.ClassSubjectID = cs.ClassSubjectID
+        WHERE cs.ClassID = @ClassID;
+
+        -- Then, delete from Enrollments where the class is referenced
+        DELETE FROM Enrollments WHERE ClassID = @ClassID;
+
+        -- Then, delete from ClassSubjects where the class is referenced
+        DELETE FROM ClassSubjects WHERE ClassID = @ClassID;
+
+        -- Finally, delete the class itself
         DELETE FROM Classes WHERE ClassID = @ClassID;
+
+        -- Commit the transaction if all deletions succeed
         COMMIT TRANSACTION;
     END TRY
     BEGIN CATCH
+        -- Rollback the transaction if any error occurs
         ROLLBACK TRANSACTION;
+
+        -- Rethrow the error
         THROW;
     END CATCH
 END;
