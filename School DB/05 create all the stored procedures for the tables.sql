@@ -1,3 +1,5 @@
+USE SchoolDB
+
 CREATE PROCEDURE InsertRole
     @RoleName VARCHAR(20)
 AS
@@ -241,6 +243,7 @@ BEGIN
     END CATCH
 END;
 GO
+-- ==================================
 
 CREATE PROCEDURE DeleteStudent
     @StudentID INT
@@ -267,6 +270,8 @@ BEGIN
     SELECT * FROM Students;
 END;
 GO
+
+
 
 --=======================================================
 CREATE PROCEDURE InsertContact
@@ -520,7 +525,8 @@ BEGIN
     BEGIN TRANSACTION;
 
     BEGIN TRY
-        INSERT INTO Enrollments (StudentID, ClassID) VALUES (@StudentID, @ClassID);
+        INSERT INTO Enrollments (StudentID, ClassID, EnrollmentDate) 
+        VALUES (@StudentID, @ClassID, GETDATE());
         COMMIT TRANSACTION;
     END TRY
     BEGIN CATCH
@@ -529,6 +535,8 @@ BEGIN
     END CATCH
 END;
 GO
+
+
 
 CREATE PROCEDURE DeleteEnrollment
     @EnrollmentID INT

@@ -32,3 +32,5 @@ C:\Users\HOME\Desktop\C# Database Project\school_win_app\School Application\Proj
 C:\Users\HOME\Desktop\C# Database Project\school_win_app\School Application\Project999\bin\Debug\ComponentFactory.Krypton.Toolkit.pdb
 C:\Users\HOME\Desktop\C# Database Project\school_win_app\School Application\Project999\bin\Debug\ComponentFactory.Krypton.Workspace.pdb
 C:\Users\HOME\Desktop\C# Database Project\school_win_app\School Application\Project999\obj\Debug\School Application.csproj.CopyComplete
+C:\Users\HOME\Desktop\C# Database Project\school_win_app\School Application\Project999\obj\Debug\Project999.PresentationLayer.SuccessMessage.resources
+C:\Users\HOME\Desktop\C# Database Project\school_win_app\School Application\Project999\obj\Debug\Project999.PresentationLayer.FailureForm.resources

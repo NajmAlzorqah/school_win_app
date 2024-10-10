@@ -41,6 +41,8 @@ SELECT * FROM TeacherSubjects;
 SELECT * FROM UserRoles;
 --===============================================
 
+USE SchoolDB
+
 -- Create View for Student Enrollments
 CREATE VIEW StudentEnrollments AS
 SELECT 
@@ -83,6 +85,7 @@ SELECT
     c.ClassName,
 	c.ClassID,
     sub.SubjectName,
+	g.GradeID,
     g.Grade,
     g.GradeDate
 FROM 
@@ -95,7 +98,7 @@ JOIN
     Classes c ON cs.ClassID = c.ClassID
 JOIN 
     Subjects sub ON cs.SubjectID = sub.SubjectID;
-
+DROP VIEW ClassGrades 
 
 -- Create View for Contacts of Students
 CREATE VIEW StudentContacts AS
@@ -141,6 +144,7 @@ SELECT
     c.ClassID,
     c.ClassName,
 	c.GradeLevel,
+	c.TeacherID,
     sub.SubjectName
 FROM 
     Classes c
@@ -149,13 +153,19 @@ JOIN
 JOIN 
     Subjects sub ON cs.SubjectID = sub.SubjectID;
 
+
+	
+SELECT * FROM ClassSubjectsView csv
+
 -- Create View for All Students with Enrollment Dates
 CREATE VIEW StudentEnrollmentDetails AS
 SELECT 
     s.StudentID,
     s.FirstName AS StudentFirstName,
     s.LastName AS StudentLastName,
-    e.EnrollmentDate,
+    e.EnrollmentID,
+	e.EnrollmentDate,
+	c.ClassID,
     c.ClassName
 FROM 
     Students s
@@ -163,6 +173,9 @@ JOIN
     Enrollments e ON s.StudentID = e.StudentID
 JOIN 
     Classes c ON e.ClassID = c.ClassID;
+
+	SELECT * FROM Enrollments
+	DROP VIEW StudentEnrollmentDetails
 
 -- Create View for Teacher and Their Subjects
 CREATE VIEW TeacherSubjects AS

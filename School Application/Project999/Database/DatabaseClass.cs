@@ -47,7 +47,12 @@ namespace Project999.Database
             }
         }
 
-        // Read Data from the Databse
+        public SqlConnection GetConnection()
+        {
+            return con;
+        }
+
+        // Read Data from the Database
         public DataTable read(string store, SqlParameter[] pr)
         {
             SqlCommand com = new SqlCommand();

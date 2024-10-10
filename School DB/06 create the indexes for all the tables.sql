@@ -1,3 +1,5 @@
+USE SchoolDB
+
 -- Create Non-Clustered Indexes for Users Table
 CREATE NONCLUSTERED INDEX IX_Username ON Users(Username);
 CREATE NONCLUSTERED INDEX IX_RoleID ON Users(RoleID);

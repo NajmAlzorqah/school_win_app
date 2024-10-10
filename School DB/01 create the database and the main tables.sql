@@ -42,6 +42,18 @@ CREATE TABLE Students (
     Email VARCHAR(100) NOT NULL UNIQUE -- Ensuring unique email for students
 );
 
+DELETE FROM Students WHERE StudentID = 49
+
+USE SchoolDB
+DROP INDEX IX_StudentDOB ON Students;
+
+-- Step 2: Alter the column type
+ALTER TABLE Students
+ALTER COLUMN DateOfBirth VARCHAR(50);
+
+-- Step 3: Optionally recreate the index
+CREATE INDEX IX_StudentDOB ON Students(DateOfBirth);
+
 -- Create Contacts Table for Students
 CREATE TABLE Contacts (
     ContactID INT IDENTITY(1,1) PRIMARY KEY,

@@ -1,4 +1,4 @@
-
+USE SchoolDB
 
 -- Create log table for Users
 CREATE TABLE UsersLog (

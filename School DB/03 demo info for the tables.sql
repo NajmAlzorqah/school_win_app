@@ -1,3 +1,5 @@
+USE SchoolDB
+
 INSERT INTO Roles (RoleName) VALUES
 ('Admin'),
 ('Teacher'),
