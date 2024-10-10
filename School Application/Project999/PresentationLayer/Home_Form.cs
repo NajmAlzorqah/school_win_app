@@ -394,6 +394,13 @@ namespace Project999.PresentationLayer
                 MessageBox.Show(ex.Message);
             }
         }
+<<<<<<< HEAD
+
+        private void left_menu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+=======
         // END
         // //////////////////////////////////////////////////////////////////////
 
@@ -439,6 +446,10 @@ namespace Project999.PresentationLayer
             //grades_delete_panel.Visible = true;
         }
 
+<<<<<<< HEAD
+        
+>>>>>>> 932a9122609725c1e0d5efb53f36f65952effc47
+=======
 
         private void subjectsAddBtn_Click(object sender, EventArgs e)
         {
@@ -578,6 +589,7 @@ namespace Project999.PresentationLayer
             teachUpdatePanel.Visible = false;
             teachDeletePanel.Visible = true;
         }
+<<<<<<< HEAD
 
 
         // glopal faile error message
@@ -1011,5 +1023,8 @@ namespace Project999.PresentationLayer
 
             }
         }
+=======
+>>>>>>> 4b708fc757eb163c36850443a9b684da87f45549
+>>>>>>> 76f0cb7aeddedbc5d296d1620df5ee8283503239
     }
 }

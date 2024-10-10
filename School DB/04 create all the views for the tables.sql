@@ -87,7 +87,8 @@ SELECT
     sub.SubjectName,
 	g.GradeID,
     g.Grade,
-    g.GradeDate
+    g.GradeDate,
+	g.GradeID
 FROM 
     Grades g
 JOIN 
@@ -98,7 +99,10 @@ JOIN
     Classes c ON cs.ClassID = c.ClassID
 JOIN 
     Subjects sub ON cs.SubjectID = sub.SubjectID;
+<<<<<<< HEAD
 DROP VIEW ClassGrades 
+=======
+>>>>>>> 76f0cb7aeddedbc5d296d1620df5ee8283503239
 
 -- Create View for Contacts of Students
 CREATE VIEW StudentContacts AS
@@ -143,8 +147,13 @@ CREATE VIEW ClassSubjectsView AS
 SELECT 
     c.ClassID,
     c.ClassName,
+<<<<<<< HEAD
 	c.GradeLevel,
 	c.TeacherID,
+=======
+    c.GradeLevel,
+    c.TeacherID,  -- Adding the TeacherID column
+>>>>>>> 76f0cb7aeddedbc5d296d1620df5ee8283503239
     sub.SubjectName
 FROM 
     Classes c
@@ -152,6 +161,7 @@ JOIN
     ClassSubjects cs ON c.ClassID = cs.ClassID
 JOIN 
     Subjects sub ON cs.SubjectID = sub.SubjectID;
+GO
 
 
 	

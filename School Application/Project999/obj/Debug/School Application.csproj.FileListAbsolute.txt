@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+C:\Users\USERWD\Desktop\Winform Project\School Application\Project999\bin\Debug\Project999.exe.config
+C:\Users\USERWD\Desktop\Winform Project\School Application\Project999\bin\Debug\Project999.exe
+C:\Users\USERWD\Desktop\Winform Project\School Application\Project999\bin\Debug\Project999.pdb
+C:\Users\USERWD\Desktop\Winform Project\School Application\Project999\obj\Debug\School Application.csprojAssemblyReference.cache
+C:\Users\USERWD\Desktop\Winform Project\School Application\Project999\obj\Debug\Project999.Libraries.RJTextBox.resources
+C:\Users\USERWD\Desktop\Winform Project\School Application\Project999\obj\Debug\Project999.PresentationLayer.Home_Form.resources
+C:\Users\USERWD\Desktop\Winform Project\School Application\Project999\obj\Debug\Project999.PresentationLayer.Login_Form.resources
+C:\Users\USERWD\Desktop\Winform Project\School Application\Project999\obj\Debug\Project999.Properties.Resources.resources
+C:\Users\USERWD\Desktop\Winform Project\School Application\Project999\obj\Debug\School Application.csproj.GenerateResource.cache
+C:\Users\USERWD\Desktop\Winform Project\School Application\Project999\obj\Debug\Project999.exe
+C:\Users\USERWD\Desktop\Winform Project\School Application\Project999\obj\Debug\Project999.pdb
+=======
 C:\Users\Mohammed\Desktop\C# Database Project\school_win_app\School Application\Project999\bin\Debug\Project999.exe.config
 C:\Users\Mohammed\Desktop\C# Database Project\school_win_app\School Application\Project999\bin\Debug\Project999.exe
 C:\Users\Mohammed\Desktop\C# Database Project\school_win_app\School Application\Project999\bin\Debug\Project999.pdb
@@ -20,6 +33,9 @@ C:\Users\HOME\Desktop\C# Database Project\school_win_app\School Application\Proj
 C:\Users\HOME\Desktop\C# Database Project\school_win_app\School Application\Project999\obj\Debug\School Application.csproj.GenerateResource.cache
 C:\Users\HOME\Desktop\C# Database Project\school_win_app\School Application\Project999\obj\Debug\Project999.exe
 C:\Users\HOME\Desktop\C# Database Project\school_win_app\School Application\Project999\obj\Debug\Project999.pdb
+<<<<<<< HEAD
+>>>>>>> 932a9122609725c1e0d5efb53f36f65952effc47
+=======
 C:\Users\HOME\Desktop\C# Database Project\school_win_app\School Application\Project999\obj\Debug\Project999.NewHome.resources
 C:\Users\HOME\Desktop\C# Database Project\school_win_app\School Application\Project999\bin\Debug\ComponentFactory.Krypton.Docking.dll
 C:\Users\HOME\Desktop\C# Database Project\school_win_app\School Application\Project999\bin\Debug\ComponentFactory.Krypton.Navigator.dll
@@ -32,5 +48,9 @@ C:\Users\HOME\Desktop\C# Database Project\school_win_app\School Application\Proj
 C:\Users\HOME\Desktop\C# Database Project\school_win_app\School Application\Project999\bin\Debug\ComponentFactory.Krypton.Toolkit.pdb
 C:\Users\HOME\Desktop\C# Database Project\school_win_app\School Application\Project999\bin\Debug\ComponentFactory.Krypton.Workspace.pdb
 C:\Users\HOME\Desktop\C# Database Project\school_win_app\School Application\Project999\obj\Debug\School Application.csproj.CopyComplete
+<<<<<<< HEAD
 C:\Users\HOME\Desktop\C# Database Project\school_win_app\School Application\Project999\obj\Debug\Project999.PresentationLayer.SuccessMessage.resources
 C:\Users\HOME\Desktop\C# Database Project\school_win_app\School Application\Project999\obj\Debug\Project999.PresentationLayer.FailureForm.resources
+=======
+>>>>>>> 4b708fc757eb163c36850443a9b684da87f45549
+>>>>>>> 76f0cb7aeddedbc5d296d1620df5ee8283503239
